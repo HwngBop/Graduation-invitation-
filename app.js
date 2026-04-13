@@ -1,19 +1,24 @@
-// Nhập các thư viện cần thiết từ Firebase (Version 10)
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-import { getFirestore, collection, addDoc, onSnapshot, serverTimestamp, query, orderBy } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// ==========================================
-// THAY TOÀN BỘ ĐOẠN CONFIG NÀY BẰNG CỦA BẠN
-// Lấy ở trang console.firebase.google.com
-// ==========================================
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyB-xxxxxxxxxxxxxxxxxxxx",
-  authDomain: "ten-project-cua-ban.firebaseapp.com",
-  projectId: "ten-project-cua-ban",
-  storageBucket: "ten-project-cua-ban.appspot.com",
-  messagingSenderId: "1234567890",
-  appId: "1:1234567890:web:xxxxxxxxxxxx"
+  apiKey: "AIzaSyBmtB6vmfKWMq0wE8HZ8H0Uwy6ZpILdTzM",
+  authDomain: "graduation-invitation-b4aeb.firebaseapp.com",
+  projectId: "graduation-invitation-b4aeb",
+  storageBucket: "graduation-invitation-b4aeb.firebasestorage.app",
+  messagingSenderId: "280242208251",
+  appId: "1:280242208251:web:82468915f889e9532e1f5e",
+  measurementId: "G-1XS55GV7EQ"
 };
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 // Khởi tạo ứng dụng Firebase
 const app = initializeApp(firebaseConfig);
