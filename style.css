@@ -1,0 +1,296 @@
+/* Thiết lập biến màu sắc (Tông Hồng Pastel & Trắng sang trọng) */
+:root {
+    --primary: #ff7e67;
+    --secondary: #ffa384;
+    --text-dark: #2d3436;
+    --text-light: #ffffff;
+    --bg-color: #fff0f0;
+    --glass-bg: rgba(255, 255, 255, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* === PHẦN 1: HERO SECTION === */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* BẠN THAY LINK ẢNH BẠN GÁI VÀO URL DƯỚI ĐÂY NHÉ */
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Tạo hiệu ứng parallax cuộn mượt */
+}
+
+/* Hiệu ứng kính mờ (Glassmorphism) */
+.glass-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 50px 40px;
+    text-align: center;
+    color: var(--text-light);
+    max-width: 600px;
+    width: 90%;
+    box-shadow: var(--glass-shadow);
+}
+
+.icon-cap {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.glass-box h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    letter-spacing: 2px;
+}
+
+.glass-box .name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5rem;
+    font-weight: 700;
+    margin: 10px 0 20px;
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+}
+
+.glass-box .subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* === PHẦN 2: THÔNG TIN CHI TIẾT === */
+.info-section {
+    padding: 80px 20px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    max-width: 800px;
+    width: 100%;
+    transform: translateY(-80px); /* Kéo khối này lên đè vào ảnh bìa một chút cho đẹp */
+}
+
+.info-item {
+    flex: 1;
+    text-align: center;
+    min-width: 250px;
+    padding: 20px;
+}
+
+.info-item i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.info-item h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.info-item p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.divider {
+    width: 2px;
+    height: 100px;
+    background: #eee;
+    margin: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .divider {
+        width: 80%;
+        height: 2px;
+        margin: 20px 0;
+    }
+}
+
+/* === PHẦN 3: SỔ LƯU BÚT === */
+.wishes-section {
+    padding: 40px 20px 100px;
+    background-color: var(--bg-color);
+}
+
+.wishes-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.wishes-header h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: var(--text-dark);
+}
+
+.wishes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Form nhập liệu */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 600px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.9);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(255, 126, 103, 0.1);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 126, 103, 0.3);
+}
+
+/* Lưới hiển thị lời chúc */
+.wishes-board {
+    width: 100%;
+}
+
+.wishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.wish-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+    position: relative;
+    transition: transform 0.3s ease;
+    border-top: 4px solid var(--primary);
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.wish-card:hover {
+    transform: translateY(-5px);
+}
+
+.wish-card h4 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.wish-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    font-style: italic;
+}
+
+.wish-card .date {
+    display: block;
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: 15px;
+    text-align: right;
+    font-style: normal;
+}
+
+/* === ANIMATIONS CƠ BẢN === */
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slide-up { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(-80px); } }
+@keyframes popIn { 
+    0% { opacity: 0; transform: scale(0.8) translateY(20px); } 
+    100% { opacity: 1; transform: scale(1) translateY(0); } 
+}
+
+.fade-in { animation: fade-in 2s ease-out; }
+.slide-up { animation: slide-up 1.5s ease-out forwards; animation-delay: 0.5s; opacity: 0; }
