@@ -31,14 +31,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070');
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('kuu.jfif');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
 .glass-box {
-    background: rgba(255, 255, 255, 0.15);
+    opacity: 0;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
@@ -66,7 +66,7 @@ body {
 
 .glass-box .name {
     font-family: 'Dancing Script', cursive;
-    font-size: 5rem;
+    font-size: 3rem;
     font-weight: 700;
     margin: 10px 0 20px;
     text-shadow: 2px 2px 15px rgba(0,0,0,0.3);
