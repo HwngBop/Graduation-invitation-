@@ -31,14 +31,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* BẠN THAY LINK ẢNH BẠN GÁI VÀO URL DƯỚI ĐÂY NHÉ */
     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Tạo hiệu ứng parallax cuộn mượt */
+    background-attachment: fixed;
 }
 
-/* Hiệu ứng kính mờ (Glassmorphism) */
 .glass-box {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
@@ -99,7 +97,8 @@ body {
     box-shadow: 0 20px 40px rgba(0,0,0,0.08);
     max-width: 800px;
     width: 100%;
-    transform: translateY(-80px); /* Kéo khối này lên đè vào ảnh bìa một chút cho đẹp */
+    /* Vị trí gốc: kéo lên đè vào ảnh bìa */
+    transform: translateY(-80px);
 }
 
 .info-item {
@@ -169,7 +168,6 @@ body {
     margin: 0 auto;
 }
 
-/* Form nhập liệu */
 .glass-panel {
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(20px);
@@ -235,7 +233,6 @@ body {
     box-shadow: 0 10px 20px rgba(255, 126, 103, 0.3);
 }
 
-/* Lưới hiển thị lời chúc */
 .wishes-board {
     width: 100%;
 }
@@ -251,14 +248,14 @@ body {
     padding: 25px;
     border-radius: 16px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.04);
-    position: relative;
-    transition: transform 0.3s ease;
     border-top: 4px solid var(--primary);
-    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* KHÔNG dùng animation: popIn — để observer điều khiển hoàn toàn */
 }
 
 .wish-card:hover {
     transform: translateY(-5px);
+    /* Chỉ áp dụng hover khi đã active để không bị lẫn với transition reveal */
+    transition: transform 0.3s ease;
 }
 
 .wish-card h4 {
@@ -284,13 +281,60 @@ body {
     font-style: normal;
 }
 
-/* === ANIMATIONS CƠ BẢN === */
-@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
-@keyframes slide-up { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(-80px); } }
-@keyframes popIn { 
-    0% { opacity: 0; transform: scale(0.8) translateY(20px); } 
-    100% { opacity: 1; transform: scale(1) translateY(0); } 
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1),
+                transform 0.8s cubic-bezier(0.5, 0, 0, 1);
 }
 
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.reveal-info {
+    opacity: 0;
+    transform: translateY(-20px); /* -80px (vị trí gốc) + 60px (dịch chuyển reveal) */
+    transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1),
+                transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal-info.active {
+    opacity: 1;
+    transform: translateY(-80px); /* Về đúng vị trí thiết kế gốc */
+}
+
+
+.wishes-grid .wish-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.5s ease-out,
+                transform 0.5s ease-out;
+}
+
+.wishes-grid .wish-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered delay: các thẻ trong cùng một hàng hiện lần lượt */
+.wishes-grid .wish-card:nth-child(3n+2) { transition-delay: 0.1s; }
+.wishes-grid .wish-card:nth-child(3n+3) { transition-delay: 0.2s; }
+
+
+/* === ANIMATIONS CHO HERO (chỉ chạy 1 lần lúc tải trang) === */
+@keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes slide-up {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(-80px); }
+}
+
+/* Dùng cho các phần tử trong hero nếu cần load animation riêng */
 .fade-in { animation: fade-in 2s ease-out; }
 .slide-up { animation: slide-up 1.5s ease-out forwards; animation-delay: 0.5s; opacity: 0; }
