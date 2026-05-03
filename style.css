@@ -31,7 +31,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('kuu.jfif');
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('back1.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -97,6 +97,8 @@ body {
     box-shadow: 0 20px 40px rgba(0,0,0,0.08);
     max-width: 800px;
     width: 100%;
+    position: relative;
+    top: 40px;
     /* Vị trí gốc: kéo lên đè vào ảnh bìa */
     transform: translateY(-80px);
 }
@@ -146,6 +148,10 @@ body {
 .wishes-section {
     padding: 40px 20px 100px;
     background-color: var(--bg-color);
+    background-image: url('back2.png');
+    background-size: cover;          /* Phủ kín toàn bộ */
+    background-position: center;     /* Căn giữa hình */
+    background-repeat: no-repeat;    
 }
 
 .wishes-header {
