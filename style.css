@@ -192,11 +192,13 @@ body {
 
 .wishes-subtitle {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    color: #555;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #222;
     line-height: 1.6;
     margin-bottom: 40px;
+    padding: 0 15px;
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 1),0px 0px 15px rgba(255, 255, 255, 1);
 }
 
 .glass-panel {
@@ -351,6 +353,22 @@ body {
 
 .wishes-grid .wish-card:nth-child(3n+2) { transition-delay: 0.1s; }
 .wishes-grid .wish-card:nth-child(3n+3) { transition-delay: 0.2s; }
+
+/* === STYLE CHO THÔNG BÁO CHƯA CÓ LỜI CHÚC === */
+.empty-wishes {
+    grid-column: 1 / -1; /* Phép thuật ở đây: Ép khối này trải dài toàn bộ chiều ngang thay vì bị kẹt ở cột đầu tiên */
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600; /* Làm chữ đậm lên */
+    color: #222; /* Màu đen tối để tương phản với viền trắng */
+    
+    /* Hiệu ứng viền phát sáng màu trắng giúp tách chữ khỏi nền */
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 1),
+                 0px 0px 15px rgba(255, 255, 255, 1);
+                 
+    padding: 30px 20px;
+}
 
 @keyframes fade-in {
     from { opacity: 0; }

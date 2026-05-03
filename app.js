@@ -83,7 +83,7 @@ onSnapshot(q, (snapshot) => {
     wishesGrid.innerHTML = "";
 
     if (snapshot.empty) {
-        wishesGrid.innerHTML = "<p style='text-align:center; width: 100%; color: #888;'>Chưa có lời chúc nào. Hãy là người đầu tiên nhé!</p>";
+        wishesGrid.innerHTML = "<div class='empty-wishes'>Chưa có lời chúc nào. Hãy là người đầu tiên nhé! <i class='fa-solid fa-heart' style='color: var(--primary); margin-left: 5px;'></i></div>";
         return;
     }
 
