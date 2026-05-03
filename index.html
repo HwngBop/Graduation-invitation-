@@ -4,69 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lời Mời Tốt Nghiệp | Gửi Tình Yêu</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font chữ bay bổng (Great Vibes) và mềm mại (Lora) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Phần 1: Hero Section -->
     <section class="hero-section">
         <div class="glass-box fade-in">
             <div class="icon-cap"><i class="fa-solid fa-graduation-cap"></i></div>
             <h1>Graduation Ceremony</h1>
-            <h2 class="name">Nguyễn Kừu Giang</h2>
-            <p class="subtitle">Đánh dấu một cột mốc tuyệt vời. Mong bạn sẽ đến chung vui cùng mình!</p>
+            <h2 class="name">Nguyễn Kiều Giang</h2>
+            <p class="subtitle">Trân trọng mời bạn đến tham dự lễ tốt nghiệp của mình</p>
         </div>
     </section>
 
-    <section class="info-section">
-        <div class="info-container slide-up">
-            <div class="info-item">
-                <i class="fa-regular fa-calendar-check"></i>
-                <h3>Thời gian</h3>
-                <p>09:00 am - 11:30 am</p>
-                <p>Chủ Nhật, 10 Tháng 5 năm 2026</p>
-            </div>
-            <div class="divider"></div>
-            <div class="info-item">
-                <i class="fa-solid fa-location-dot"></i>
-                <h3>Địa điểm</h3>
-                <p>Hội trường C2</p>
-                <p>Trường Đại học Bách khoa Hà Nội</p>
-            </div>
-        </div>
-    </section>
+    <!-- ====== THẺ BỌC ĐỂ TẠO HIỆU ỨNG MỜ ẢO ====== -->
+    <div class="content-wrapper">
 
-    <section class="wishes-section">
-        <div class="wishes-header">
-            <h2>Để lại lời chúc cho Kừu Giang mau <i class="fa-solid fa-heart" style="color: #ff4757;"></i></h2>
-        </div>
-
-        <div class="wishes-container">
-            <div class="form-wrapper glass-panel">
-                <form id="wishForm">
-                    <div class="input-group">
-                        <label for="guestName">Tên của bạn</label>
-                        <input type="text" id="guestName" placeholder="VD: Anh yêu của em..." required>
-                    </div>
-                    <div class="input-group">
-                        <label for="guestMessage">Lời nhắn nhủ</label>
-                        <textarea id="guestMessage" rows="4" placeholder="Viết vài lời chúc thật ngọt ngào..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">
-                        <span>Gửi Yêu Thương</span>
-                        <i class="fa-regular fa-paper-plane"></i>
-                    </button>
-                </form>
-            </div>
-
-            <div class="wishes-board">
-                <div id="wishesGrid" class="wishes-grid">
-                    <div class="loading-text">Đang tải những lời chúc ngọt ngào...</div>
+        <!-- Phần 2: Thông tin chi tiết -->
+        <section class="info-section">
+            <div class="info-container reveal-info">
+                <div class="info-item">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <h3>Thời gian</h3>
+                    <p>09:00 am - 11:30 am</p>
+                    <p>Chủ Nhật, 10 Tháng 5 năm 2026</p>
+                </div>
+                <div class="divider"></div>
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h3>Địa điểm</h3>
+                    <p>Hội trường C2</p>
+                    <p>Trường Đại học Bách khoa Hà Nội</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Phần 3: Sổ lưu bút -->
+        <section class="wishes-section">
+            <div class="wishes-header reveal">
+                <h2>Gửi Kiều Giang một lời chúc thật xinh nhé <i class="fa-solid fa-heart" style="color: #ff4757;"></i></h2>
+                <h3 class="wishes-subtitle">Sự hiện diện của bạn đã là món quà quý giá nhất.<br>Bạn không cần mang hoa hay quà, chỉ cần đến và chung vui cùng mình là đủ.</h3>
+            </div>
+
+            <div class="wishes-container">
+                <div class="form-wrapper glass-panel reveal">
+                    <form id="wishForm">
+                        <div class="input-group">
+                            <label for="guestName">Tên của bạn</label>
+                            <input type="text" id="guestName" placeholder="VD: Anh yêu của em..." required>
+                        </div>
+                        <div class="input-group">
+                            <label for="guestMessage">Lời nhắn nhủ</label>
+                            <textarea id="guestMessage" rows="4" placeholder="Viết vài lời chúc thật ngọt ngào..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <span>Gửi Yêu Thương</span>
+                            <i class="fa-regular fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="wishes-board">
+                    <div id="wishesGrid" class="wishes-grid">
+                        <div class="loading-text">Đang tải những lời chúc ngọt ngào...</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div> 
+    <!-- ====== KẾT THÚC THẺ BỌC ====== -->
 
     <script type="module" src="app.js"></script>
 </body>
